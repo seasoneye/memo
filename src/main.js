@@ -1,7 +1,14 @@
 // The Vue build version to load with the `import` command
 import Vue from 'vue'
+import Vuex from 'vuex'
 
-import test from './components/test.vue'
+import '@babel/polyfill'
+import './assets/style/reset.css'
+
+import store from './store'
+import router from './router'
+
+Vue.use(Vuex)
 
 // Vue.config.productionTip = false
 
@@ -16,5 +23,7 @@ import test from './components/test.vue'
 
 new Vue({
 	el: '#app',
-	render: h=> h(test),
+	router,
+	store: new Vuex.Store(store),
+	// render: h=> h(test),
 })
